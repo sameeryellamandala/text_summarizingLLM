@@ -12,7 +12,6 @@ st.subheader('Summarize URL')
 with st.sidebar :
     groq_api_key = st.text_input("GROQ API KEY" , value = "" , type = "password")
 
-llm = ChatGroq(model = "llama-3.3-70b-versatile",groq_api_key = groq_api_key)
 
 prompt_template = ChatPromptTemplate.from_messages([
     ("system", "summarize the following text :"),
@@ -30,6 +29,7 @@ if st.button("Summarize the content from YT or Website ") :
     else:
         try:
             with st.spinner("waiting..."):
+                llm = ChatGroq(model = "llama-3.3-70b-versatile",groq_api_key = groq_api_key)
                 docs = []
                 if "youtube.com" in gurl  or "youtu.be" in gurl :
                     if "&" in gurl:
@@ -53,4 +53,5 @@ if st.button("Summarize the content from YT or Website ") :
         except Exception as e:
             st.error(f" An error occured during processing :{str(e)}")
             st.code(traceback.format_exc(),language='python')
+
             
