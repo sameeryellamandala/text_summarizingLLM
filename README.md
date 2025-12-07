@@ -1,0 +1,2 @@
+# text_summarizationLLM
+This app leverages the power of Groq LLM to generate concise and accurate summaries from lengthy text inputs. Users can input text from multiple sources, including web pages, articles, and YouTube transcripts, and instantly receive a clear, easy-to-read summary. Built with Streamlit
