@@ -14,7 +14,7 @@ with st.sidebar :
 
 
 prompt_template = ChatPromptTemplate.from_messages([
-    ("system", "summarize the following text :"),
+    ("system", "summarize the following text given :"),
     ("human", "{text}")
 ])
 gurl = st.text_input( "URL" ,label_visibility= "collapsed")
@@ -55,3 +55,4 @@ if st.button("Summarize the content from YT or Website ") :
             st.code(traceback.format_exc(),language='python')
 
             
+
